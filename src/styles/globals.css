@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Road+Rage&display=swap');
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.ticket {
+  font-family: "Road Rage", serif;
+  font-weight: 800;
+  font-style: italic;
+}
