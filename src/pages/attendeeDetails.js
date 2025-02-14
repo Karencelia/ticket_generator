@@ -33,10 +33,8 @@ export default function FormPage() {
 
   return (
     
-      
-    <div className="min-h-screen border-[#197686] mx-auto text-white flex items-center justify-center px-4 sm:px-6 md:px-8">
-  <section className="max-w-xl mx-auto bg-[#0d1b2a] border border-[#197686] px-4 sm:px-6 md:px-8 rounded-[30px] shadow-lg py-6">
-    <div className="max-w-lg w-full bg-transparent border border-[#197686] p-4 sm:p-6 md:p-8 rounded-[30px] shadow-lg">
+<div className="min-h-screen bg-[#0d1b2a] text-white px-4 sm:px-8 max-w-2xl mx-auto border border-[#197686] p-4 sm:p-6 rounded-lg shadow-lg">
+    <div className="max-w-2xl w-full bg-transparent border border-[#197686] p-4 sm:p-6 md:p-8 rounded-[30px] shadow-lg">
       <div className='flex flex-col sm:flex-row justify-between items-center mb-4'>
         <h2 className="text-2xl text-center sm:text-left mb-2 sm:mb-0">Attendee Details</h2>
         <p className="text-sm sm:text-base">Step 2/3</p>
@@ -77,10 +75,9 @@ export default function FormPage() {
           placeholder="hello@aviolagos.io"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="w-full p-2 sm:p-3 border border-[#197686] rounded-lg bg-transparent text-red"
+          className="w-full p-2 sm:p-3 border border-[#197686] rounded-lg bg-transparent text-red-500"
         />
-
-{errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
+        {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
       </div>
 
       <div className="mb-4">
@@ -93,14 +90,11 @@ export default function FormPage() {
         />
       </div>
 
-      <div className="flex flex-col sm:flex-row justify-evenly gap-4 text-sm">
-        <Button onClick={() => router.push('/')} className='px-4 py-2 w-full sm:w-48 bg-transparent border border-[#24A0B5] rounded'>Back</Button>
-        <Button onClick={handleSubmit} className="bg-[#24A0B5] hover:bg-[#24A0B5] px-6 py-2 w-full sm:w-48">
-          Get My Free Ticket
-        </Button>
+      <div className="flex flex-col sm:flex-row gap-4 text-sm w-full">
+        <Button onClick={() => router.push('/')} className='w-full sm:flex-1 px-4 py-2 bg-transparent border border-[#24A0B5] rounded'>Back</Button>
+        <Button onClick={handleSubmit} className="w-full sm:flex-1 bg-[#24A0B5] hover:bg-[#24A0B5] px-6 py-2 rounded">Get My Free Ticket</Button>
       </div>
     </div>
-  </section>
 </div>
 
   );
