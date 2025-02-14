@@ -4,6 +4,7 @@ import JsBarcode from 'jsbarcode';
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
 import { Button } from "@/components/ui/button";
+import { useRouter } from 'next/router';
 
 export default function Ticket() {
   const [user, setUser] = useState(null);
@@ -41,7 +42,13 @@ export default function Ticket() {
     }
   };
 
+
   if (!user) return <p className="text-white text-center">Loading ticket...</p>;
+
+  const router = useRouter();
+  const handleSubmit = () => {
+    router.push('/');
+  };
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-[#0d1b2a] text-white">
@@ -117,7 +124,7 @@ export default function Ticket() {
         </div>
       </div>
       <div className="flex flex-col sm:flex-row justify-evenly gap-4 text-sm pt-4">
-              <Button className='px-4 py-2 w-full sm:w-48 bg-transparent border border-[#24A0B5] rounded'>Get Another Ticket</Button>
+              <Button onClick={handleSubmit} className='px-4 py-2 w-full sm:w-48 bg-transparent border border-[#24A0B5] rounded'>Get Another Ticket</Button>
               <Button onClick={downloadPDF} className="bg-[#24A0B5] hover:bg-[#24A0B5] px-6 py-2 w-full sm:w-48">
                 Download
               </Button>
